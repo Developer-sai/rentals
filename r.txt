@@ -1,0 +1,551 @@
+ 
+ 
+National College of Ireland 
+ 
+Project Submission Sheet  
+ 
+ 
+ 
+Student Name: 
+ 
+1. Angel Joy Nellissery 
+2. Tejan Sree Challa 
+3. Satya Gopi Krishna 
+4. Swetha Ratnam 
+ 
+ 
+Student ID: 
+ 
+1. 25111027 
+2. 24318116 
+3. 25118773 
+4. 24265659 
+ 
+ 
+Programme: 
+ 
+MSc in Artificial Intelligence  
+ 
+Year: 
+ 
+2026 
+ 
+Module: 
+ 
+Foundations of Artificial Intelligence 
+ 
+ 
+Lecturer: 
+ 
+Sallar Khan 
+Submission Due 
+Date: 
+ 
+3rd April 2026 
+ 
+Project Title: 
+ 
+An Intelligent Web-Based System for Cost Rental Housing Aggregation 
+in Ireland 
+ 
+Word Count: 
+ 
+Approx 3000 
+ 
+Academic Integrity Certificate Verification Code: 1. M6yNQDn9N4  (25111027) 
+                                                                               2. eNdAQfWhFz   (24318116) 
+                                                                                                          3. C4yDHjXPLc.     (25118773) 
+                                                                               4. K6CrWu4R2Z  (24265659) 
+ 
+I hereby certify that the information contained in this (my submission) is information pertaining to 
+research I conducted for this project.  All information other than my own contribution will be fully 
+referenced and listed in the relevant bibliography section at the rear of the project. 
+ALL internet material must be referenced in the references section.  Students are encouraged to use 
+the Harvard Referencing Standard or appropriate referencing style supplied by the Library.  To use 
+other author's written or electronic work is illegal (plagiarism) and may result in disciplinary action.  
+Students may be required to undergo a viva (oral examination) if there is suspicion about the validity 
+of their submitted work. 
+ 
+Note: Academic Integrity Course Requirement – Starting Monday, 19th January 2026, all students are 
+required to successfully complete the Epigeum Academic Integrity Course, which is available on Moodle. 
+This is a self-paced online course consisting of 4 modules and will take approximately 2 hours to complete. 
+Once you have successfully completed the course, you will receive a Certificate & Verification Code. This code 
+must be included on the Project Cover Sheet when submitting your work. For full details and guidance, please 
+visit:  ttps://libguides.ncirl.ie/academicintegrity/epigeumforstudents 
+ 
+ 
+Signature: 
+1. Angel Joy Nellissery 
+2. Tejan Sree Challa 
+3. Satya Gopi Krishna 
+4. Swetha Ratnam 
+Date: 
+2nd April 2026 
+PLEASE READ THE FOLLOWING INSTRUCTIONS: 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+Please attach a completed copy of this sheet to each project (including multiple copies). 
+Projects should be submitted to your Programme Coordinator. 
+You must ensure that you retain a HARD COPY of ALL projects, both for your own reference and in 
+case a project is lost or mislaid.  It is not sufficient to keep a copy on computer.  Please do not bind 
+projects or place in covers unless specifically requested. 
+You must ensure that all projects are submitted to your Programme Coordinator on or before the required 
+submission date.  Late submissions will incur penalties. 
+All projects must be submitted and passed in order to successfully complete the year.  Any 
+project/assignment not submitted will be marked as a fail. 
+Please check that you read AI and Academic Integrity Acknowledgement Supplments in this 
+document 
+Office Use Only 
+Signature:  
+Date:  
+Penalty Applied (if applicable):  
+AI Acknowledgement Supplement 
+Module:  Foundations of Artificial Intelligence 
+Title: An Intelligent Web-Based System for Cost Rental Housing Aggregation in 
+Ireland 
+Your Name/Student Number               
+Course  
+1. Angel Joy Nellissery 
+2. Tejan Sree Challa 
+3. Satya Gopi Krishna 
+4. Swetha Ratnam 
+Foundations of Artificial 
+Intelligence  
+Date  
+2nd April 2026 
+This section is a supplement to the main assignment, to be used if AI was used in any capacity in the 
+creation of your assignment; if you have queries about how to do this, please contact your lecturer. For an 
+example of how to fill these sections out, please click here. 
+AI Acknowledgment  
+This section acknowledges the AI tools that were utilized in the process of completing this assignment.  
+Tool Name  
+Brief Description  
+Link to tool  
+ChatGPT  
+Used for research, references, articles, journals and format of 
+report 
+ChatGPT 
+Description of AI Usage  
+This section provides a more detailed description of how the AI tools were used in the assignment. It 
+includes information about the prompts given to the AI tool, the responses received, and how these 
+responses were utilized or modified in the assignment. One table should be used for each tool used.  
+CHATGPT 
+ChatGPT was utilized to identify the academic research papers, articles, and journals related to House Rentals,  for 
+Foundations of AI. Used in understanding the formatting standards of IEEE reports. However, all written content was 
+independently created and developed by the student.  
+Format of  report, references, articles and journals 
+Reference purpose  
+Evidence of AI Usage  
+This section includes evidence of significant prompts and responses used or generated through the AI tool. 
+It should provide a clear understanding of the extent to which the AI tool was used in the assignment. 
+Evidence may be attached via screenshots or text.  
+Additional Evidence:  
+[Place evidence here]  
+Additional Evidence:  
+[Place evidence here]  
+This certificate is awarded to:
+Angel Joy Nellissery
+FOR COMPLETING THE PROGRAMME
+Academic Integrity: For Students, Second Edition
+January 20, 2026
+Certificate Verification Code:
+M6yNQDn9N4
+Powered by TCPDF (www.tcpdf.org)
+This certificate is awarded to:
+Tejan Sree Chowdary Challa
+FOR COMPLETING THE PROGRAMME
+Academic Integrity: For Students, Second Edition
+February 5, 2026
+Certificate Verification Code:
+Course Code:
+MSCAI
+eNdAQfWhFz
+Powered by TCPDF (www.tcpdf.org)
+
+This certificate is awarded to:
+Satya Gopi Krishna Bandaru
+FOR COMPLETING THE PROGRAMME
+Academic Integrity: For Students, Second Edition
+March 22, 2026
+Certificate Verification Code:
+Course Code:
+MSCAI
+C4yDHjXPLc
+Powered by TCPDF (www.tcpdf.org)
+“An Intelligent Web-Based System for Cost Rental
+Housing Aggregation in Ireland”
+Angel Joy Nellissery
+Foundation in AI
+National College of Ireland
+Student ID: 25111027
+Tejan sree challa
+Foundation in AI
+National College of Ireland
+Student ID: 24318116
+Abstract—Ireland’s Cost Rental housing initiative allows for
+housing at rates based on construction and upkeep costs, at
+least 25 percentage below market rates. Despite this significant
+social policy intervention, there remains no centralized platform
+for potential tenants to explore and stay abreast of existing
+opportunities. Rather, they must individually monitor five dif
+ferent provider websites within application periods of one to
+two weeks.Cost Rental Ireland is a web application developed
+specifically for this problem domain, fully deployed and ready
+for use.It utilizes a Python-based web scraper utilizing GitHub
+Actions to scrape all five Irish Cost Rental providers every
+two hours, aggregating this data for display utilizing a Next.js
+frontend on Vercel. Additionally, it includes an HTML parsing
+solution for each provider, intelligent alerting, and an AI-based
+guidance tool utilizing the Claude API (Anthropic). The system’s
+architecture is based on a Supabase PostgreSQL-based cloud
+database. Technical contributions include intelligent Irish county
+detection from unstructured location data, robust deduplication
+techniques, provider-specific HTML parsing solutions, and a
+secure server-side proxy approach for LLM deployment. It is
+publicly accessible and deployed, thus making a substantive
+contribution to housing information accessibility in Ireland.
+Index Terms—Cost Rental Housing ,Web scraping ,Artificial
+Intelligence , Data Aggregation ,Chatbot
+I. INTRODUCTION
+There is a huge issue with the housing market in Ireland at
+the moment. The Residential Tenancies Board (RTB) stated
+that, as of 2025, the average monthly rent for a home in
+Dublin is more than C2,200.This was a 45 percentage increase
+over the previous ten years [12]. The Cost Rental scheme was
+created as a key part of the Housing for All strategy.It states
+that the rent level should be at least 25 percentage lower than
+the average market rent and should reflect the actual costs of
+developing the property [4]. The scheme is delivered through
+Approved Housing Bodies (AHBs) like Cl´ uid Housing, Tuath
+Housing, and Respond Housing, and government bodies like
+the Land Development Agency (LDA) and the government’s
+Affordable Homes initiative on Affordable Homes. There is
+no platform that offers information on available properties
+through all five bodies. Each of the five bodies offers prop
+erties through separate websites, with different formats and
+different update frequencies. The application windows are also
+only available for one to two weeks, and applicants need
+to monitor all five bodies’ websites simultaneously to avoid
+Satya Gopi Krishna
+Foundation in AI
+National College of Ireland
+Student ID: 25118773
+Swetha Ratnam
+Foundation in AI
+National College of Ireland
+Student ID: 24265659
+missing available properties [11]. This study will answer the
+three significant research questions about the data aggregation,
+system architecture, and AI integration in the context of the
+cost rental housing systems. It will explore the possibilities of
+collecting heterogeneous data using automated web scraping
+tools and the potential data architecture in real-time processing
+and alerting. It will also explore the potential of AI language
+models by enhancing system usability. A web-based system
+will be proposed using automated web scraping tools, cloud
+storage technologies, and AI chatbot technologies. The study
+will show the potential of using automation technologies in
+the housing sector.
+II. LITERATURE REVIEW
+A. Theoretical Framework
+This project is based on three different theories. The Design
+Science Research (DSR) paradigm (Hevner et al., 2004) [6]
+provides the epistemology, and the platform provides the main
+research artifact and is evaluated with regard to a real-world
+problem. The Extract Transform Load (ETL) model (Kimball
+and Caserta, 2004) [7] provides the structure for the data
+f
+low. This includes the Python scraper doing the extract,
+the transformation of the data such as finding counties and
+eliminating duplicates, and then the load into Supabase. The
+Human-Centered AI (HCAI) framework (Shneiderman, 2020)
+[14] provides the structure for the chatbot so it can assist the
+user in decision-making rather than taking the decision away
+from the user.
+B. Housing Data Platforms and Aggregation
+Scanlon et al. (2019) [13] list information asymmetry as
+an important structural barrier to the take-up of affordable
+housing in Ireland and the UK, noting that eligible households
+are often not aware of the schemes that are available. Norris
+and Byrne (2022) [11] highlight the discoverability deficit in
+the Irish Cost Rental Scheme, stating that the social value
+of the Irish Cost Rental Scheme is diminished by the ease of
+access to information. Hagedorn et al. (2020) [5] show that the
+use of centralised property search websites, such as Rightmove
+and Zillow, saves 60-70 percentage of search time compared
+to searching provider websites individually.
+C. Web Scraping: Methods and Ethical Considerations
+Mitchell (2018) [10] gives a detailed taxonomy of web
+scraping methods, distinguishing static HTML parsing with
+tools such as BeautifulSoup4 from dynamic content rendering
+with tools such as Selenium or Playwright, and API-based
+web scraping. Since Cost Rental listings are mostly static
+HTML, the former method is appropriate both technologically
+and computationally. Krotov and Silva (2018) [9] discuss
+the ethical and the legal impacts of the web scraping and
+determine that the in accordance with many current standards,
+web scraping for public interest and non-commercial use of
+publicly accessible data is both ethical and legal.
+D. Cloud Database Architecture
+With the advent of Backend as a Service (BaaS) platforms,
+the threshold to the developing database-driven applications
+has to significantly decreased. Supabase, which is mainly
+based on PostgreSQL, provides the real-time functionality,the
+auto-generated RESTful APIs, andthe row-level security [15].
+Kleppmann (2017) [8] specifically mentions in the JSONB
+column type of PostgreSQL, which is suitable for handling
+the semi-structured data, and this is directly applicable to the
+property types field of the schema of this project.
+E. AI Integration in Public Information Services
+Bommasani et al. (2021) [1] say that foundation models
+like Claude are good for conversational information retrieval
+systems because they can understand language in context very
+well. Brown et al. (2020) [2] demonstrate that LLMs can
+be stimulated with domain-specific data to generate precise
+and substantiated responses, a methodology reflected in this
+project’s chatbot, where listing data is directly incorporated
+into the chatbot’s prompt.
+F. Research Gaps
+A review of the literature identifies three gaps directly
+addressed by this project. First, while housing data aggregation
+has been studied in market-rate contexts, there is a notable
+absence of research on aggregation platforms for social or af
+fordable housing schemes. Second, peer-reviewed evaluations
+of LLM-powered housing assistants grounded in live listing
+data are rare; the literature is advancing faster than deployed
+case studies [2]. Third, the specific technical challenge of
+normalising unstructured location data from Irish provider
+websites — mapping neighbourhood-level place names to
+administrative counties — does not appear to have been
+addressed in published literature.
+III. METHODOLOGY
+As Creswell and Creswell (2018) [3] explain, this project
+used a pragmatist epistemology approach and a Design Sci
+ence Research approach. The main contribution was an eval
+uated software artifact. The development process has gone
+through a number of steps, such as defining the problem,
+designing the architecture, building the scraper, the database,
+and the deployment, building the frontend, the AI chatbot, and
+setting up DevOps. All decisions made during development are
+tracked using Git and GitHub.
+A. System Architecture
+There are three layers in the system architecture that are not
+tightly connected. The data layer has a Supabase (PostgreSQL)
+database in the EU West region that stores listings, subscriber
+preferences, and scrape logs. The collection layer is a Python
+scraper that runs on a GitHub Actions cron schedule and sends
+data to the data layer every two hours. The presentation layer
+is a Next.js 14 app that runs on Vercel and gets data from the
+database. It also has all the features that users can see. The
+Supabase REST API is used for all communication between
+layers.This layered architecture mainly follows principles sim
+ilar to the ETL-based data processing systems [7].
+B. Data Collection And Data design
+The data gathering process happens solely through auto
+mated web scraping from five publicly accessible provider
+websites [10]. The base class for the scraper, BaseScraper,
+takes care of HTTP request handling, including two-second de
+lays between requests, a transparent User Agent header, smart
+county detection through a mapping of 50+ Irish placenames
+to Irish counties, text sanitisation, property type deduplication,
+Supabase upsert operations, and scrape logging. Each provider
+scraper has custom HTML parsing operations defined, which
+gather data such as development name, location, county, types
+with rents and units, BER, discount, and application status
+[15]. The listings table will have the UUID primary key, a
+unique source url column, a JSONB property types column,
+and the computed rent min and rent max columns as integer
+types. The subscribers table will have email subscription data.
+The scrape log table will have timestamps, counts, and error
+status per scraper execution and it is used by the admin
+dashboard.
+C. Frontend Application
+This is a Next.js 14 application using the App Router feature
+with ISR and revalidation set to 300 seconds. The application’s
+main components are the following: Filter system, using
+useMemo-optimized client-side filtering on county, provider,
+rent, status, and search text Eligibility calculator, checking
+against the C66,000 net income threshold in the Dublin region
+and C59,000 net income threshold in other regions Rent
+comparison chart, using Daft.ie Q1 2026 market data Email
+subscription form Admin dashboard at /admin Dual themes
+using CSS custom properties
+D. AI Chatbot Integration
+The chatbot uses a two-part system to operate. The Chat
+Bot.js client-side component is responsible for maintaining UI
+state and chat history. The Next.js API route is mainly the
+proxy to the Anthropic Claude API, and the ANTHROPIC
+API KEY is actually never exposed to the client. The prompt
+is meant to make sure that Claude’s response is relevant to
+the live listings [1], [2]. It does this by the encouraging the
+the place names. This was fixed by adding 50 or more Irish
+localities to the county mapping. The Respond scraper mainly
+picked up sentence fragments in the location fields from the
+nearby body text. This was fixed by the filtering out junk
+phrases and the rejecting sentence fragments. The LDA scraper
+made 44 entries that were very similar to each other. This was
+f
+ixed by only keeping ’/lda-cost-rental/’ links and skipping
+anchor URLs. The AffordableHomes.ie scraper made broken
+URLs because it didn’t have slash characters when it put them
+together. This was fixed by changing the way it built URLs.
+B. Database results
+The Supabase PostgreSQL database architecture was the
+determined to be exceptionally well-suited for project’s spec
+ifications.The JSONB column type for the property types that
+enabled storage of listings with the diverse bedroom configu
+rations without requiring a normalised relational schema.The
+scrape log table was useful in tracking all the things that
+were happening in the admin dashboard health monitoring.
+The greatest problem was the blocking of the service role
+key by Supabase Row Level Security. This was rectified by
+deactivating the RLS feature and using the GRANT command.
+C. Frontend and AI Results
+Fig. 1. System Architecture of the Proposed Cost Rental Aggregation
+Platform
+model to use the available and provided database content when
+answering questions about the available properties and to say
+that there is no matching content.
+E. Ethical considerations
+The three ethical considerations arise from this project.
+First, in terms of data privacy, the project does not store any
+identifiable information, and email addresses are only collected
+from users who opt in to receive alerts. Second, in terms of
+web scraping ethics, the scraper does not violate any restric
+tions, eases server load, and does not scrape any extraneous
+data, only what is necessary to display on a page. Third, in
+terms of the AI accountability, the prompt provided to the
+Claude explicitly asks for uncertainty, following Anthropic’s
+guidelines for responsible AI development.
+IV. SYSTEM IMPLEMENTATION AND RESULTS
+A. Scraper System
+The scraper system collects listings from five different Cost
+Rental companies. The Cl´ uid scraper only showed three list
+ings at first because the links to the listings and the navigation
+elements had the same CSS class. This was fixed by filtering
+to only URLs that had ”/property/” in them. The Tuath scraper
+set all listings to Dublin County because it didn’t recognize
+Next.js 14 front end is available (at cost-rental
+frontend.vercel.app), hosted by Vercal. The live front
+end has email alerts, eligibility checker, rent comparison chart
+(with 25-29 percentage savings over Daft’s Q1 2026 market
+rates), and admin dashboard to monitor the status of the live
+scrapers. Users can interact with the AI chatbot created with
+Claude (and server-side proxy) to obtain answers to questions
+based on live data.
+V. EVALUATION
+The system is evaluated based on four dimensions of
+performance, which have been chosen because they collec
+tively evaluate the platform from both a technical and user
+centered perspective, in line with the RQ framework. The
+accuracy of the scraped data (RQ1) is the first measure of
+the scraping subsystem’s performance. The scraped fields,
+including development name, rent, location, and application
+status, are checked against the websites provided by the
+source suppliers. After debugging, accurate results have been
+obtained from all five suppliers, with the county detection
+mapping correctly resolving sub-county place names for all
+locations in the dataset. The efficiency of the data pipeline is
+measured by system performance (RQ2). The cron schedule
+in GitHub Actions successfully executes the scraper at two
+hour intervals from 7am to 7pm UTC and at 1am UTC during
+the night. Supabase upsert functionality ensures no duplicates
+are created from repeated execution of the script. ISR with
+300-second revalidation ensures near real-time listing status
+without requiring a full redeployment for the frontend [3].
+User experience is defined by the degree of availability
+of features like full-text search, multi-dimensional filtering
+(county, provider, rent range, status), eligibility calculation,
+rent comparison, email alert subscription, and AI assistant.
+This platform aggregates information from all five providers in
+one interface, thereby offering the 60–70 percentage reduction
+in search effort as proposed by Hagedorn et al. (2020) [8].
+Performance of the AI chatbot (RQ3) is defined by the model’s
+ability to generate accurate, well-grounded text. By injecting
+live data into the prompt for the system, the chatbot does
+not suffer from hallucination [15] while ensuring factually
+accurate text based on the data available in the database. The
+server-side proxy pattern is used for ensuring the security of
+the API key in any environment. Shortcomings of the present
+evaluation include the lack of formal user studies on the
+improvement in application rate for eligible users, as well as
+the lack of regression testing for individual scrapers. These
+have been identified as important areas for future work
+CONCLUSION AND FUTURE WORKS
+The project proposed an idea for the intelligent system for
+aggregating cost rental housing information on the web. The
+main idea behind this project was to solve the problem of the
+fragmented housing information and improve the accessibility
+for all users. The project mainly aims to be improve user
+experience through use of the web scraping, cloud storage,
+and an interactive user interface. The use of the artificial
+intelligence-based on the chatbot also helps to improve the
+user experience through the real-time interaction.
+The proposed methodology is mostly quite effective in
+answering the research question, as it explains the how an
+automated system can be used for the collecting, processing,
+and presenting housing information in the very easy manner
+for users. The system also helps reduce human effort, avoid
+time-sensitive opportunities, and improve efficiency in access
+ing cost rental housing information [13].
+However, the system has a number of the limitations. First,
+the web scraping method that relies on the structure of other
+websites. The structure of other websites may change over
+the time, and this could impact on the web scraping method.
+Additionally, the current implementation of the chatbot has a
+number of limitations. The chatbot can only assist to a certain
+extent. The chatbot may not understand complex user queries.
+These limitations show areas of improvement for the current
+system.
+The major implication of this project is the possibility of
+improving accessibility and usability through the aggregation
+of data and the use of artificial intelligence. Future work
+can be carried out by improving the current system through
+the incorporation of machine learning algorithms and other
+features such as map visualization and mobile support. The
+improvements will make the current system even better.
+REFERENCES
+[1] Rishi Bommasani et al. On the opportunities and risks of foundation
+models, 2021.
+[2] Tom B. Brown et al. Language models are few-shot learners. In
+Advances in Neural Information Processing Systems, volume 33, pages
+1877–1901, 2020.
+[3] John W. Creswell and J. David Creswell. Research Design: Qualitative,
+Quantitative, and Mixed Methods Approaches. SAGE Publications,
+Thousand Oaks, 5th edition, 2018.
+[4] Department of Housing, Local Government and Heritage. Housing for
+all: A new housing plan for ireland. Technical report, Government of
+Ireland, Dublin, 2021.
+[5] Johannes Hagedorn, Lukas Lingitz, and Wilfried Sihn. Property portals
+as information aggregators: impact on housing search behaviour. In
+ternational Journal of Housing Markets and Analysis, 13(4):581–599,
+2020.
+[6] Alan R. Hevner, Salvatore T. March, Jinsoo Park, and Sudha Ram. De
+sign science in information systems research. MIS Quarterly, 28(1):75
+105, 2004.
+[7] Ralph Kimball and Joe Caserta. The Data Warehouse ETL Toolkit. Wiley
+Publishing, Indianapolis, 2004.
+[8] Martin Kleppmann. Designing Data-Intensive Applications. O’Reilly
+Media, Sebastopol, 2017.
+[9] Vlad Krotov and Leiser Silva. Legality and ethics of web scraping. In
+Proceedings of the 24th Americas Conference on Information Systems
+(AMCIS), New Orleans, 2018.
+[10] Ryan Mitchell. Web Scraping with Python. O’Reilly Media, Sebastopol,
+2nd edition, 2018.
+[11] Michelle Norris and Michael Byrne. Cost rental housing in ireland:
+policy context, implementation challenges, and early outcomes. Housing
+Studies, 39(1):112–134, 2022.
+[12] Residential Tenancies Board. Rtb rent index q3 2025. Technical report,
+Residential Tenancies Board / ESRI, Dublin, 2025.
+[13] Kathleen Scanlon, Melissa Fern´andez Arrigoitia, and Christine White
+head. Social housing in europe. European Policy Analysis, 17:1–12,
+2019.
+[14] Ben Shneiderman. Human-centred artificial intelligence: Reliable, safe
+and trustworthy. International Journal of Human-Computer Interaction,
+36(6):495–504, 2020.
+[15] Supabase. Supabase documentation: Database, auth, storage, edge
+functions, 2023.

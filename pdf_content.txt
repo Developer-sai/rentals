@@ -1,0 +1,752 @@
+National College of Ireland
+FAI_IEEE_Final.docx
+Document Details
+Submission ID
+trn:oid:::10525:373831766
+Submission Date
+Apr 3, 2026, 3:22 AM GMT+1
+Download Date
+Apr 3, 2026, 3:26 AM GMT+1
+File Name
+FAI_IEEE_Final.docx
+File Size
+25.3 KB
+10 Pages
+3,730 Words
+22,078 Characters
+Page 1 of 14 - Cover Page
+Submission ID
+trn:oid:::10525:373831766
+Page 1 of 14 - Cover Page
+Submission ID
+trn:oid:::10525:373831766
+7% Overall Similarity
+The combined total of all matches, including overlapping sources, for each database.
+Exclusions
+14 Excluded Matches
+Match Groups
+11 Not Cited or Quoted  6%
+Matches with neither in-text citation nor quotation marks
+2 Missing Quotations  1%
+Matches that are still very similar to source material
+3 Missing Citation  1%
+Matches that have quotation marks, but no in-text citation
+0 Cited and Quoted  0%
+Matches with in-text citation present, but no quotation marks
+Top Sources
+7%
+Internet sources
+3%
+Publications
+6%
+Submitted works (Student Papers)
+Page 2 of 14 - Integrity Overview
+Submission ID
+trn:oid:::10525:373831766
+Page 2 of 14 - Integrity Overview
+Submission ID
+trn:oid:::10525:373831766
+Match Groups
+11 Not Cited or Quoted  6%
+Matches with neither in-text citation nor quotation marks
+2 Missing Quotations  1%
+Matches that are still very similar to source material
+3 Missing Citation  1%
+Matches that have quotation marks, but no in-text citation
+0 Cited and Quoted  0%
+Matches with in-text citation present, but no quotation marks
+Top Sources
+7%
+Internet sources
+3%
+Publications
+6%
+Submitted works (Student Papers)
+Top Sources
+The sources with the highest number of matches within the submission. Overlapping sources will not be displayed.
+1
+Submitted works
+University of Bucharest on 2026-03-24
+2%
+2
+Internet
+arxiv.org
+2%
+3
+Internet
+inldigitallibrary.inl.gov
+<1%
+4
+Submitted works
+Singapore Institute of Technology on 2025-12-05
+<1%
+5
+Internet
+www.researchgate.net
+<1%
+6
+Internet
+hdl.handle.net
+<1%
+7
+Submitted works
+Green University Of Bangladesh on 2026-01-30
+<1%
+8
+Internet
+wise.com
+<1%
+9
+Internet
+www.ceicdata.com
+<1%
+10
+Submitted works
+Universitat Oberta de Catalunya on 2026-03-22
+<1%
+Page 3 of 14 - Integrity Overview
+Submission ID
+trn:oid:::10525:373831766
+Page 3 of 14 - Integrity Overview
+Submission ID
+trn:oid:::10525:373831766
+11
+Internet
+norma.ncirl.ie
+<1%
+12
+Submitted works
+University of Essex on 2026-03-20
+<1%
+13
+Submitted works
+University of Limerick on 2018-12-02
+<1%
+14
+Submitted works
+University of Liverpool on 2025-11-28
+<1%
+Page 4 of 14 - Integrity Overview
+Submission ID
+trn:oid:::10525:373831766
+Page 4 of 14 - Integrity Overview
+Submission ID
+trn:oid:::10525:373831766
+National College of Ireland Project Submission Sheet 
+ 
+Student Name: 
+1. Lakshmi Ranga Sai Gajulapalli 
+Bhavitha Thummunuru 
+Praveen Kumar Mallireddy 
+Nikhil Reddy Gaddam 
+ 
+ 
+Student ID: 1. 25205692 
+2. 25211048 
+3. 25152190 
+4. 25169572 
+Programme: MSc in Artificial Intelligence 
+Year: 2026 
+Module: 
+Foundations of Artificial Intelligence 
+ 
+Lecturer: 
+Sallar Khan 
+Submission Due 
+Date: 3rd April 2026 
+Project Title: 
+AAn Agentic Structured-Data RAG System for Irish Housing 
+Market Intelligence 
+ 
+Word Count: Approx 3000 
+ 
+  Academic Integrity Certificate Verification Code: 1. 7WjTdYreBj 
+(25205692) 
+U71wyoGCb 
+(25152190) 
+AZVXZ4a0EC (2169572) 
+ 
+I hereby certify that the information contained in this (my submission) 
+is information pertaining to research I conducted for this project. All 
+information other than my own contribution will be fully referenced and 
+listed in the relevant bibliography section at the rear of the project. 
+ALL internet material must be referenced in the references section. 
+Students are encouraged to use the Harvard Referencing Standard or 
+appropriate referencing style supplied by the library. To use other 
+author's written or electronic work is illegal (plagiarism) and may 
+result in disciplinary action. Students may be required to undergo a viva 
+(oral examination) if there is suspicion about the validity of their 
+submitted work. 
+Note: Academic Integrity Course Requirement – Starting Monday, 19th 
+January 2026, all students are required to successfully complete the 
+Epigeum Academic Integrity Course, which is available on Moodle. This is 
+a self-paced online course consisting of 4 modules and will take 
+approximately 2 hours to complete. Once you have successfully completed 
+the course, you will receive a Certificate & Verification Code. This code 
+must be included on the Project Cover Sheet when submitting your work. 
+For full details and guidance, please visit: !" 
+ttps://libguides.ncirl.ie/academicintegrity/epigeumforstudents 
+ 
+Signature: 1. Lakshmi Ranga Sai  Gajulapalli 
+Bhavitha Thummunuru 
+Praveen Kumar Mallireddy 
+Nikhil Reddy Gaddam 
+ 
+Page 5 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 5 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Date: 2nd April 2026 
+ 
+PLEASE READ THE FOLLOWING INSTRUCTIONS: 
+ 
+Please attach a completed copy of this sheet to each project (including 
+multiple copies). 
+Projects should be submitted to your Programme Coordinator. 
+You must ensure that you retain a HARD COPY of ALL projects, both for 
+your own reference and in case a project is lost or mislaid. It is not 
+sufficient to keep a copy on computer. Please do not bind projects or 
+place in covers unless specifically requested. 
+You must ensure that all projects are submitted to your Programme 
+Coordinator on or before the required submission date. Late submissions 
+will incur penalties. 
+All projects must be submitted and passed in order to successfully 
+complete the year. Any project/assignment not submitted will be marked as 
+a fail. 
+Please check that you read AI and Academic Integrity Acknowledgement 
+Supplments in this document 
+ 
+ 
+ 
+Office Use Only 
+Signature: 
+Date: 
+ 
+Penalty Applied (if applicable): 
+ 
+AI Acknowledgement Supplement Module: Foundations of Artificial 
+Intelligence 
+Housing Market Intelligence 
+ 
+ 
+Your Name/Student Number 
+Course 
+Date 
+Lakshmi Ranga Sai Gajalupalli 
+Bhavitha Thummunuru 
+Praveen Kumar Mallireddy 
+Nikhil Reddy Gaddam  
+Foundations of Artificial Intelligence 
+2nd April 2026 
+ 
+ 
+ 
+ 
+This section is a supplement to the main assignment, to be used if AI was 
+used in any capacity in the creation of your assignment; if you have 
+queries about how to do this, please contact your lecturer. For an 
+example of how to fill these sections out, please click here. 
+AI Acknowledgment 
+This section acknowledges the AI tools that were utilized in the process 
+of completing this assignment. 
+ 
+Tool Name 
+Page 6 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 6 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Brief Description 
+Link to tool 
+Perplexity 
+Used for research, references, articles, journals and format of report 
+Perplexity 
+ 
+ 
+ 
+ 
+Description of AI Usage 
+This section provides a more detailed description of how the AI tools 
+were used in the assignment. It includes information about the prompts 
+given to the AI tool, the responses received, and how these responses 
+were utilized or modified in the assignment. One table should be used for 
+each tool used. 
+ 
+PERPLEXITY 
+Perplexity was utilized to identify the academic research papers, 
+articles, and journals related to House Rentals, for Foundations of AI. 
+Used in understanding the formatting standards of IEEE reports. However, 
+all written content was independently created and developed by the 
+student. 
+Reference purpose 
+ 
+Evidence of AI Usage 
+This section includes evidence of significant prompts and responses used 
+or generated through the AI tool. It should provide a clear understanding 
+of the extent to which the AI tool was used in the assignment. Evidence 
+may be attached via screenshots or text. 
+Additional Evidence: 
+[Place evidence here] 
+Additional Evidence: 
+[Place evidence here] 
+ 
+ 
+ 
+ 
+ 
+ 
+An Agentic Structured-Data RAG System for Irish Housing Market 
+Intelligence 
+Foundation in AI 
+National College of Ireland 
+Student ID: 25205692 
+Bhavitha T 
+Foundation in AI 
+National College of Ireland 
+Student ID: 25211048 
+Praveen Kumar M 
+Foundation in AI 
+National College of Ireland 
+Student ID: 25152190 
+Nikhil Reddy Gaddam 
+Foundation in AI 
+Page 7 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 7 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+National College of Ireland 
+Student ID: 25169572 
+ 
+ 
+Abstract 
+—Users must navigate multiple disconnected government datasets to 
+understand Ireland’s housing crisis. In this paper, we introduce a novel 
+conversational tool designed to answer everyday questions about local 
+rental and property markets. The system relies on a somewhat non-
+traditional Agentic Structured-Data Retrieval-Augmented Generation (ASD-
+RAG) approach. The system eliminates vector similarity search entirely. 
+Instead, user queries are routed through a five-stage LangGraph pipeline 
+that runs deterministic Pandas logic directly against official datasets 
+(from the RTB, PPR, and CSO). While a modular Large Language Model—like 
+LLaMA 3.3-70B or Google Gemini—takes care of reasoning and 
+classification, Python strictly handles all the math. The system achieves 
+sub-3-second latency with dynamic visualizations and exact source 
+citations. We also implemented strict domain guardrails to refuse or 
+redirect off-topic questions. Based on our empirical evaluation covering 
+seven categories of intent, we observed a 99.1% numerical accuracy rate. 
+For context, an unaided LLM recorded only 38.2%. 
+Index Terms—Retrieval-Augmented Generation, Multi-Agent Systems, 
+LangGraph, Irish Housing Market, Conversational AI, FastAPI, Model-
+Agnostic LLM, Structured Data Retrieval, Affordability Analytics 
+I. Introduction 
+The Irish rental market continues to face severe strain. According to Q4 
+2024 figures from the RTB, the national average for new rents reached 
+€1,680 per month. That represents a 5.5% annual increase, amounting to a 
+78% rise since 2015 [1]. At the same time, the CSO reported an 8.7% jump 
+in its December 2024 Residential Property Price Index, underscoring the 
+ongoing pressure on buyers [12]. In Dublin, premium market rents are 
+increasingly challenging to access on a median wage [2]. 
+Such data is technically public. However, it sits scattered across 
+separate platforms, each requiring a different level of technical 
+literacy to parse. The Property Price Register provides raw, unaggregated 
+transaction logs, while the CSO’s own portals demand familiarity with 
+complex statistical dashboards. Navigating these disparate systems 
+creates significant friction for the average renter or prospective buyer 
+trying to cross-reference market prices against their personal income. 
+Research by Hagedorn et al. [3] indicated that centralised platforms can 
+reduce search times by 60–70%. Despite this proven need for accessible 
+aggregation, a unified tool pairing Ireland’s official housing data with 
+natural-language questioning has previously not existed. 
+Large language models (LLMs) might seem like an obvious fix. But using 
+one out of the box introduces serious risks. Models tend to invent 
+numbers. Also, they lack any knowledge of events occurring after they 
+were trained. Retrieval-Augmented Generation (RAG) was introduced by 
+Lewis et al. [4] to fix exactly this by fetching external evidence to 
+ground the model. Standard RAG setups rely on embedding similarity. This 
+works fine for paragraphs of text, but performs poorly when dealing with 
+tables where exact numeric filtering is the actual goal. Because of this 
+limitation, we propose Agentic Structured-Data RAG (ASD-RAG). Here, we 
+combine the reasoning capabilities of an LLM with deterministic data 
+operations instead of guessing with vectors. 
+2
+7
+Page 8 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 8 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+We present four main contributions: 
+1. A Conversational Interface: A functioning natural-language system 
+covering official Irish housing data from 2010 to 2024. 
+2. Auditable Pipeline: A five-stage LangGraph system that explicitly 
+separates intent, data retrieval, arithmetic, reasoning, and formatting. 
+3. Empirical Benchmarks: Our internal evaluations cover end-to-end 
+latency, classification effectiveness, and an ablation study targeting 
+the ASD-RAG architecture. 
+4. Decoupled Architecture: Agent logic is separated from the underlying 
+LLM provider, allowing developers to switch between Gemini, LLaMA, or 
+others seamlessly. 
+Following this section, we review relevant literature. Section III 
+details our system architecture, while Section IV outlines the 
+experimental results. Finally, limitations and next steps are covered in 
+Section V. 
+II. Related Work 
+A. Retrieval-Augmented Generation 
+RAG was originally proposed by Lewis et al. [4] as a way to combine 
+sequence-to-sequence models with an external index. It performed very 
+well on standard QA benchmarks. That said, it relies heavily on the 
+assumption that unstructured text can be fetched by similarity. When it 
+comes to tabular filtering, this assumption breaks down. 
+Gao et al. [5] highlighted structured-data retrieval as a complex, open 
+problem. They pointed out that simply flattening tables into text ruins 
+numerical reasoning. TableRAG [6] attempts to solve this by alternating 
+between text retrieval and SQL. With our proposed system, we took this 
+idea further by eliminating approximate retrieval entirely. Every piece 
+of data is accessed via hard-coded Pandas operations, ensuring every 
+numeric claim maps back to a specific spreadsheet row. 
+B. Multi-Agent LLM Orchestration 
+Workflows can be modeled as stateful directed graphs, which is exactly 
+what LangGraph does [7]. Nodes act as distinct agents, passing shared 
+state back and forth through edges. Single-pass prompting often struggles 
+with complex logic. In contrast, graph-based structures allow us to build 
+pipelines where stages can be independently audited. As Wang et al. [8] 
+discovered, using specialized sub-agents usually leads to better 
+performance on multi-step queries than treating the LLM as a monolith. We 
+relied on these findings when designing our own agent decomposition 
+strategy. 
+Answering off-topic questions badly can erode user trust very quickly. 
+Shneiderman’s framework for Human-Centred AI [9] suggests that these 
+assistants need to support decision-making rather than act as a 
+substitute for it. Transparency and tight focus are both required. To 
+achieve this, the system implements a firm system-prompt guardrail inside 
+the reasoning agent, blocking any input not related to mortgages, 
+rentals, or housing policy. 
+D. Irish Housing Data and Information Asymmetry 
+Information asymmetry acts as a structural barrier in the housing market. 
+Norris and Byrne [10] explained how eligible renters routinely miss out 
+on support schemes simply because the required details are difficult to 
+locate. Looking at European social housing, Scanlon et al. [11] 
+documented similar issues, noting that centralized access platforms 
+noticeably increased scheme participation. Our architecture was built to 
+address exactly this gap. By fusing RTB, CSO, and PPR data, it offers a 
+6
+2
+Page 9 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 9 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+single entry point for resources otherwise split across different portals 
+with varying update schedules. 
+E. Agentic AI for Structured-Data QA 
+In their work on ReAct, Yao et al. demonstrated how interleaving tool 
+calls with reasoning traces improves factual accuracy. The proposed ASD-
+RAG model applies a similar concept to structured data. Instead of 
+browsing the internet, our agents use Pandas operations to pull exact 
+statistics. Furthermore, our architecture demonstrates that when LLMs are 
+fed structured numbers, they provide much richer contextual explanations 
+compared to when they are forced to recall figures from memory. 
+III. System Architecture and Methodology 
+A. Architectural Overview 
+At its core, the backend operates as a FastAPI service resting on a 
+single /api/chat endpoint. Incoming requests enter a compiled LangGraph 
+state machine. This machine consists of five sequential nodes: Intent, 
+Retrieval, Analysis, Reasoning, and Response. The output is a formatted 
+JSON object carrying the answer, dynamic chart data, and the relevant 
+sources. We serve the frontend as static files from this exact same 
+process. 
+Fig. 1. Architectural diagram of the LangGraph pipeline. Purple nodes 
+indicate LLM agents; green nodes represent deterministic operations. 
+The state graph compiles at startup and persists. A HousingState 
+TypedDict holds all intermediate data. Because of this, both retrieval 
+and analysis are completely deterministic for any given query. The LLM 
+reasoning step is the only place variation is introduced. A normal round-
+trip takes less than three seconds. 
+B. Data Layer 
+We rely on three primary government datasets to ground the system’s 
+responses. The RTB rent index file is roughly 5.7 MB, tracking precise 
+county-level and local electoral area rental histories from 2010 to 2024. 
+Next, the Dublin subset of the Property Price Register (around 27 MB) 
+logs individual property sale transactions, documenting the exact 
+addresses, dates, and final execution prices. Finally, the CSO Master 
+Dataset provides localized median earnings and county-level mean sale 
+prices, serving as the foundational macroeconomic baseline that allows 
+our affordability agent to accurately calculate price-to-earnings ratios 
+and local housing cost burdens. 
+To save memory, all files load lazily using Python’s lru_cache. Each CSV 
+is read from disk only once. Upon loading, county names get title-cased 
+and dates are parsed day-first. The data_manager exposes typed functions 
+(such as get_rent_stats or compare_counties) that return dictionaries 
+matching a fixed schema. Because of this strict schema, the underlying 
+CSV files could easily be swapped out for a SQL database later without 
+altering the agent logic. 
+C. Intent Agent 
+First up is the Intent Agent. Operating at a low temperature of 0.1, it 
+calls the designated LLM API to classify the user’s goal into one of 
+seven distinct categories, such as rent_query or affordability. We kept 
+the temperature low because we need structural consistency, not creative 
+writing. It also pulls out necessary entities like the year or target 
+county. 
+can normalize messy inputs automatically. If it happens to generate 
+invalid JSON, a regex fallback assigns a default general_chat intent. 
+This prevents the whole pipeline from crashing over a formatting glitch. 
+Page 10 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 10 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+D. Retrieval Agent 
+Once the intent is known, the Retrieval Agent triggers the proper 
+data_manager calls. If someone asks for rent stats, it evaluates the 
+primary numbers and then attempts to fetch a five-year trend using a 
+try/except block. For single-county comparisons, the national average is 
+grabbed automatically as a baseline. 
+Notice that no vector embedding happens here. We rely entirely on Pandas 
+boolean masks running across in-memory DataFrames. Every statistic passed 
+to the LLM traces back to a specific row, meeting the auditability 
+standards recommended by Norris and Byrne [10]. 
+E. Analysis Agent 
+The Analysis Agent takes the raw retrieval data and performs rigid, 
+domain-specific macroeconomic calculations. Rent queries receive weekly 
+cost breakdowns alongside calculated gross income requirements based on 
+the standard 30% affordability rule, which posits that households should 
+not allocate more than one-third of their gross income to secure adequate 
+housing. House price questions trigger mortgage estimators, projecting 
+monthly repayment schedules based on current prevailing interest rates, 
+typical 30-year terms, and standard minimum deposit regulations. We 
+calculate rolling multi-year trend trajectories directly to explicitly 
+flag rapidly appreciating or depreciating local markets. Finally, we 
+assign an overall affordability rating based on a five-tier scale tied 
+tightly to corresponding local median earnings. 
+These math operations bypass the LLM completely. We store the resulting 
+summary inside HousingState, preparing it for the narrative reasoning 
+step coming next. 
+F. Reasoning Agent 
+Running at a higher temperature of 0.4, the Reasoning Agent turns the 
+calculated data into readable text. The prompt treats the LLM as an 
+expert Irish housing analyst. We deliberately included instructions on 
+Rent Pressure Zones and Housing Assistance Payments. Crucially, a hard 
+guardrail instructs the model to refuse off-topic inquiries. 
+Because the model receives pre-calculated math and strict context 
+dictionaries, its job is simply to explain what the numbers mean rather 
+than invent them. Responses are limited to roughly 300 words and heavily 
+utilize bullet points to present information clearly. 
+G. Response Agent 
+Our final node, the Response Agent, is responsible for packaging the 
+diverse intermediate outputs into a cohesive JSON payload ready for 
+direct frontend ingestion. It carefully formats the narrative reasoning 
+block, constructs dynamic Chart.js configuration objects—including 
+setting correct geometric axes, responsive tooltips, and appropriate data 
+labels based on the query context—flattens critical numerical metrics for 
+immediate display, and strictly logs the exact dataset sources to 
+guarantee traceability. We mapped specific chart types to specific 
+analytical intents. For instance, multi-county comparisons might trigger 
+a clean radar chart, whereas historical cost trends produce an intuitive 
+multi-series line graph. We purposefully injected a small element of 
+controlled randomization into the chart selection process to ensure the 
+user interface remains visually engaging and does not feel monotonous 
+over extended conversational sessions. 
+IV. Evaluation 
+A. Latency and Pipeline Performance 
+We measured execution times during our empirical evaluation across 50 
+Page 11 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 11 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+sample queries covering all intents. On average, the end-to-end journey 
+took 2.7 seconds (σ = 0.6s). Inference latency from the two LLM calls 
+dominated the timeline, demanding roughly 0.9 seconds each. Arithmetic 
+processing and Pandas indexing combined for less than 50 milliseconds. 
+Table I — Breakdowns of processing delay. 
+Pipeline Stage 
+Mean 
+Std Dev 
+Notes 
+Intent Agent 
+0.91s 
+0.18s 
+LLM inference, temp=0.1 
+Retrieval 
+0.03s 
+0.02s 
+Pandas masking 
+Analysis 
+0.01s 
+0.01s 
+Python arithmetic 
+Reasoning 
+0.94s 
+0.24s 
+LLM inference, temp=0.4 
+Response 
+0.01s 
+0.01s 
+JSON serialisation 
+API overhead 
+0.08s 
+0.04s 
+HTTP transfers 
+Overall 
+2.70s 
+0.60s 
+N=50 test cases 
+ 
+Clearly, inference speed is the bottleneck. The structured data passing 
+is basically instantaneous at this scale. 
+B. Intent Classification Accuracy 
+Using a holdout set of 140 queries, we tested the Intent Agent’s 
+precision. It achieved a 93.6% accuracy rate overall. The few errors that 
+occurred were strictly misclassifications between adjacent topics, such 
+as confusing a rent_query with an affordability question. Positively, it 
+never mistook an off-topic question for a housing query. 
+Entity extraction worked well too. County targeting hovered around 97.1%, 
+while year extraction hit 98.6%. Bedroom extraction was slightly lower at 
+94.3%, mostly failing when users used vague slang. 
+C. Ablation: ASD-RAG vs. Direct LLM Generation 
+We ran 50 factual queries against three system setups: direct LLM 
+generation, ASD-RAG without the Analysis Agent, and the full pipeline. 
+External annotators checked every generated figure against the actual CSV 
+records. 
+Page 12 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 12 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Table II — Results from the ablation experiment. 
+Configuration 
+Fact-Check Hit Rate 
+Accurate Sources 
+Direct LLM 
+38.2% 
+0.0% 
+Retrieval Only 
+91.4% 
+100.0% 
+Full Pipeline 
+99.1% 
+100.0% 
+ 
+The explicit constraints of our retrieval operations handle the heavy 
+lifting for factual grounding. Adding the strict Python environments of 
+the Analysis Agent closes the final accuracy gap. Without it, the LLM 
+still occasionally fumbles basic mortgage arithmetic even when 
+successfully holding the correct base property price in context. 
+Furthermore, during our direct LLM tests, the models frequently suffered 
+from localized semantic hallucination: for instance, confidently 
+misapplying historical UK housing policy initiatives or outdated 
+affordability schemes directly to the distinct Irish market. They also 
+tended to conflate listing asking prices scraped from old web articles 
+with actual recorded transaction prices from the PPR. These systemic 
+failures powerfully underscore exactly why deterministic tabular 
+retrieval mechanisms remain mandatory for reliable financial query 
+resolution. 
+D. Guardrail Effectiveness 
+We evaluated the system against 40 purely off-topic queries covering 
+sports, politics, and generic coding questions. The Reasoning Agent 
+identified and refused 39 of them (97.5%). The single slip-up involved a 
+question about "American mortgage rates." The model briefly attempted to 
+answer before stopping. While system prompts defend against obvious 
+domain breaks, they occasionally struggle with queries that run parallel 
+to the intended topic. 
+V. Conclusions and Future Work 
+A. Summary 
+The proposed architecture proves that combining Agentic RAG with 
+deterministic tabular filters is highly effective for government data. 
+Processing requests in under 3 seconds, the current pipeline managed 
+93.6% classification accuracy and 99.1% factual reliability. Direct LLM 
+approaches recorded only 38.2% accuracy in our empirical evaluation. 
+Fusing strict Python math with natural language explanation creates a 
+system that is both readable and auditable. 
+B. Limitations 
+There are several clear technical limitations restricting the current 
+pipeline. First, the setup relies entirely on static, pre-downloaded CSV 
+files, meaning any sudden macroeconomic market shifts or new government 
+dataset releases won’t register within the intelligence system until the 
+next manual codebase update. Second, to manage computational memory 
+thresholds during prototyping, the property sale dataset strictly covers 
+the Dublin municipality, thereby limiting deeper property price analysis 
+to the capital matrix. Additionally, without persistent conversational 
+11
+Page 13 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 13 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+session memory, users cannot engage in organic dialog follow-ups. If a 
+user queries average Dublin rents, and subsequently asks "how does that 
+compare to Galway?", the stateless LangGraph pipeline will currently fail 
+to contextually resolve the foundational pronoun reference. 
+C. Future Work 
+Integrating live data APIs from the RTB and CSO portals poses the most 
+practical next step. From there, implementing persistent state memory 
+would allow for genuine dialogue chains. Moving the data to PostgreSQL 
+PostGIS would open up neighborhood-level spatial analysis. Conducting a 
+targeted user study to see if this improves decision-making in the real 
+world would provide the most illuminating feedback. 
+References 
+[1] Residential Tenancies Board, "RTB Rent Index Q4 2024," RTB, Dublin, 
+Ireland, 2025. [Online]. Available: https://rtb.ie 
+[2] Global Property Guide, "Ireland’s Residential Property Market 
+Analysis 2025," Mar. 2025. [Online]. Available: 
+https://www.globalpropertyguide.com/europe/ireland 
+[3] C. Hagedorn et al., "Centralised Property Platforms and Housing 
+Search Efficiency," Journal of Housing Economics, vol. 47, no. 2, pp. 
+101–118, 2020. 
+[4] P. Lewis, E. Perez, A. Piktus, F. Petroni, V. Karpukhin, N. Goyal, H. 
+Küttler, M. Lewis, W.-t. Yih, T. Rocktäschel, S. Riedel, and D. Kiela, 
+"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," in 
+Advances in Neural Information Processing Systems (NeurIPS), vol. 33, pp. 
+9459–9474, 2020. 
+[5] Y. Gao, Y. Xiong, X. Gao, K. Jia, J. Pan, Y. Bi, Y. Dai, J. Sun, and 
+H. Wang, "Retrieval-Augmented Generation for Large Language Models: A 
+Survey," arXiv preprint arXiv:2312.10997, 2023. 
+[6] X. Yu, P. Jian, and C. Chen, "TableRAG: A Retrieval Augmented 
+Generation Framework for Heterogeneous Document Reasoning," arXiv 
+preprint arXiv:2410.02025, 2024. 
+[7] H. Chase, "LangGraph: Multi-Agent Workflows," LangChain Blog, Feb. 
+2024. [Online]. Available: https://blog.langchain.com/langgraph-multi-
+agent-workflows/ 
+[8] L. Wang, C. Ma, X. Feng, Z. Zhang, H. Yang, J. Zhang, Z. Chen, J. 
+Tang, X. Chen, Y. Lin, W. X. Zhao, Z. Wei, and J.-R. Wen, "A Survey on 
+Large Language Model based Autonomous Agents," Frontiers of Computer 
+Science, vol. 18, no. 6, 2024. 
+[9] B. Shneiderman, "Human-Centered Artificial Intelligence: Reliable, 
+Safe & Trustworthy," International Journal of Human–Computer Interaction, 
+vol. 36, no. 6, pp. 495–504, 2020. 
+[10] M. Norris and M. Byrne, "The Slow and Uneven Development of Cost 
+Rental Housing in Ireland: The Role of Policy Design," Housing Studies, 
+vol. 37, no. 8, pp. 1480–1499, 2022. 
+[11] K. Scanlon, C. Whitehead, and M. F. Arrigoitia (Eds.), Social 
+Housing in Europe. Wiley Blackwell, Oxford, 2014. 
+[12] Central Statistics Office Ireland, "Residential Property Price 
+Index," CSO Statistical Release, Dublin, Dec. 2024. [Online]. Available: 
+https://www.cso.ie 
+1
+2
+3
+5
+9
+10
+12
+13
+4
+8
+14
+Page 14 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
+Page 14 of 14 - Integrity Submission
+Submission ID
+trn:oid:::10525:373831766
