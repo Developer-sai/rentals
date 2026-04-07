@@ -19,7 +19,8 @@ Classify the user query into exactly ONE of these intents:
 - trend_analysis: trends over time, year-over-year, historical analysis
 - affordability: rent-to-income, price-to-earnings, can I afford it
 - recommendation: where should I live, best areas, suggestions
-- general_chat: greetings, general questions not about housing data
+- meta_query: questions about the conversation history, summaries of what was discussed, or questions about the assistant's own functionality
+- general_chat: greetings, or general questions not about housing and not about history
 
 Return ONLY a JSON object with these fields:
 {
@@ -38,13 +39,30 @@ Kilkenny, Kerry.
 """
 
 
-def classify_intent(query: str) -> dict:
+def classify_intent(query: str, history: list = []) -> dict:
     """Use Groq to classify the user's query intent and extract entities."""
+    
+    # Format history for the prompt
+    history_str = ""
+    # Use last 10 messages for better context recognition
+    for msg in history[-10:]:
+        role = "User" if msg["role"] == "user" else "Assistant"
+        # Truncate content for intent classification to keep it focused
+        content = msg['content'][:150] + "..." if len(msg['content']) > 150 else msg['content']
+        history_str += f"{role}: {content}\n"
+
+    user_prompt = f"""Conversation History:
+{history_str}
+
+New User Query: {query}
+
+Based on the history and the new query, identify the intent. If the user uses pronouns like 'it', 'there', or 'that', refer to the history to identify the location or topic."""
+
     response = client.chat.completions.create(
         model=MODEL,
         messages=[
             {"role": "system", "content": INTENT_SYSTEM_PROMPT},
-            {"role": "user", "content": query},
+            {"role": "user", "content": user_prompt},
         ],
         temperature=0.1,
         max_tokens=200,

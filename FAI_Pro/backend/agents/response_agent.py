@@ -7,8 +7,6 @@ Adds structured metadata for the frontend to optionally display charts.
 
 import random
 
-import random
-
 def format_response(state: dict) -> dict:
     """Package the reasoning into a final response object with context-aware visualizations."""
     intent_type = state.get("intent_type", "general_chat")
@@ -17,105 +15,110 @@ def format_response(state: dict) -> dict:
     analysis = state.get("analysis", {})
 
     chart_data = None
-    options = []
-
-    # 1. Trend queries -> Line or Bar
+    
+    # SENIOR ENGINEER RULE: No random choices. Choose the best viz for the data.
+    
+    # 1. Trend Analysis -> Line Chart (Best for time-series)
     if intent_type == "trend_analysis" and "trend" in data:
         trend = data["trend"]
-        ctype = random.choice(["line", "bar"])
-        options.append({
-            "type": ctype,
-            "title": f"Rent Trend: {data.get('county', 'Ireland')}",
+        chart_data = {
+            "type": "line",
+            "title": f"Rent Price Progression: {data.get('county', 'National')}",
             "labels": [str(t["year"]) for t in trend],
             "values": [t["avg_rent"] for t in trend],
             "unit": "€",
-        })
+        }
 
-    # 2. Comparison -> Radar, Bar, or PolarArea
+    # 2. Comparison Queries -> Bar Chart (Best for side-by-side comparison)
     elif intent_type == "comparison":
         cmp = data.get("rent_comparison", {})
-        county_stats = data.get("county_stats")
-        national_stats = data.get("national_stats")
-
-        if "difference_euro" in cmp:
-            keys = [k for k in cmp.keys() if k not in ("difference_euro", "percentage_difference", "more_expensive")]
-            ctype = random.choice(["bar", "radar", "polarArea"])
-            options.append({
-                "type": ctype,
-                "title": f"Comparison: {keys[0]} vs {keys[1]}" if len(keys)==2 else "Rent Comparison",
-                "labels": keys,
-                "values": [cmp[k]["mean_rent"] for k in keys if isinstance(cmp[k], dict)],
+        counties = [k for k in cmp.keys() if isinstance(cmp[k], dict)]
+        
+        if len(counties) >= 2:
+            chart_data = {
+                "type": "bar",
+                "title": f"Market Comparison: {counties[0]} vs {counties[1]}",
+                "labels": counties,
+                "values": [cmp[k]["mean_rent"] for k in counties],
                 "unit": "€",
-            })
-        elif county_stats and national_stats:
-            ctype = random.choice(["bar", "polarArea"])
-            options.append({
-                "type": ctype,
-                "title": f"{data.get('county', 'County')} vs National Average",
-                "labels": [data.get("county", "County"), "National Average"],
-                "values": [county_stats.get("mean_rent", 0), national_stats.get("mean_rent", 0)],
+            }
+        elif state.get("county1") and data.get("national_stats"):
+            chart_data = {
+                "type": "bar",
+                "title": f"{state['county1']} vs National Average",
+                "labels": [state['county1'], "National Average"],
+                "values": [data.get("county_stats", {}).get("mean_rent", 0), data.get("national_stats", {}).get("mean_rent", 0)],
                 "unit": "€",
-            })
+            }
 
-    # 3. Standard Rent / Affordability -> Doughnut, Bar, Line
+    # 3. Affordability/Rent Queries -> Doughnut (Best for parts-of-a-whole/ratios)
     elif intent_type in ("rent_query", "affordability"):
         monthly = data.get("mean_rent") or data.get("avg_monthly_rent") or analysis.get("latest_avg_rent")
         
         if monthly:
-            options.append({
+            # Show "30% Rule" visualization
+            chart_data = {
                 "type": "doughnut",
-                "title": "Cost vs Recommended Income (30% Rule)",
-                "labels": ["Rent", "Remaining Income (70%)"],
-                "values": [monthly, monthly / 0.30 * 0.70],
+                "title": "Monthly Budget Allocation (30% Rule)",
+                "labels": ["Rent", "Other Expenses"],
+                "values": [monthly, (monthly / 0.30) - monthly],
                 "unit": "€",
-            })
-            
-        trend_context = data.get("trend_context")
-        if trend_context and isinstance(trend_context, dict) and "trend" in trend_context:
-            trend = trend_context["trend"]
-            options.append({
+            }
+
+    # 4. Fallback: If trend analysis is available as context, show it
+    if not chart_data:
+        trend_ctx = data.get("trend_context", {})
+        if isinstance(trend_ctx, dict) and "trend" in trend_ctx:
+            trend = trend_ctx["trend"]
+            chart_data = {
                 "type": "line",
-                "title": f"Trailing 5-Year Growth: {data.get('county', 'County')}",
+                "title": f"Historical Context: {state.get('county1', 'Regional')}",
                 "labels": [str(t["year"]) for t in trend],
                 "values": [t["avg_rent"] for t in trend],
                 "unit": "€",
-            })
-            options.append({
-                "type": "radar",
-                "title": f"Historical Rent Map: {data.get('county', 'County')}",
-                "labels": [str(t["year"]) for t in trend],
-                "values": [t["avg_rent"] for t in trend],
-                "unit": "€",
-            })
+            }
 
-    # 4. Recommendation / Multi-County -> Bar or Radar
-    elif intent_type == "recommendation" and "national_overview" in data:
-        df = data["national_overview"]
-        if isinstance(df, dict) and "counties" in df:
-            # We don't have direct access to DataFrame here easily if serialized to dict,
-            # but if we do, we could map it.
-            pass
-
-    if options:
-        chart_data = random.choice(options)
-
-    # Clean up key_metrics to look more dynamic and less hardcoded
+    # Professional clean-up of key_metrics
     cleaned_metrics = {}
+    metric_map = {
+        "latest_avg_rent": "Current Avg Rent",
+        "yearly_change_pct": "Annual Growth",
+        "affordability_index": "Affordability Score",
+        "market_status": "Market Status",
+        "difference_euro": "Rent Gap",
+        "savings_potential": "Monthly Savings"
+    }
+
     for k, v in analysis.items():
-        if v is not None and v != "" and k != "summary":
-            # Rename keys dynamically to make them feel fresh
-            new_key = k.replace("_pct", " %").replace("_", " ").title()
-            # If it's a difference metric, maybe randomly prefix it
-            if "difference" in k and random.choice([True, False]):
-                new_key = "Net " + new_key
-            if "cost" in k and random.choice([True, False]):
-                new_key = "Est. " + new_key
-            cleaned_metrics[new_key] = v
+        if v is not None and v != "":
+            label = metric_map.get(k, k.replace("_", " ").title())
+            cleaned_metrics[label] = v
+
+    # OPTIMIZATION: Only show charts for high-value analytical intents
+    # If it's a general property lookup, focus on text + sources.
+    analytical_intents = ("trend_analysis", "comparison", "affordability")
+    if intent_type not in analytical_intents:
+        chart_data = None
+
+    # Strict Metric Control: Only show metrics for 'affordability' intent.
+    # The user wants them removed for general rent lookups.
+    if intent_type != "affordability":
+        cleaned_metrics = {}
+
+    # Pro-Grade Presentation: Format sources into methodology section if present
+    sources = state.get("sources", [])
+    if sources and reasoning:
+        footer = "\n\n***\n**Sources & Methodology**: Analysis based on real-time market data from "
+        source_names = [s.get('title', 'Property Portals').split('.')[0].capitalize() for s in sources[:3]]
+        footer += ", ".join(set(source_names)) + " and historical RTB datasets."
+        # No duplicate disclaimers in main body. Pro-level directness.
+    else:
+        footer = ""
 
     return {
-        "answer": reasoning,
+        "answer": reasoning + footer,
         "intent": intent_type,
         "chart_data": chart_data,
-        "sources": state.get("retrieval_source", []),
+        "sources": sources,
         "key_metrics": cleaned_metrics,
     }

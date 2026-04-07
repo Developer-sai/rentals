@@ -69,30 +69,65 @@ def health():
     return {"status": "ok", "service": "Irish Housing Assistant"}
 
 
-@app.post("/api/chat", response_model=ChatResponse)
+import json
+import asyncio
+from fastapi.responses import StreamingResponse
+
+from session_manager import session_store
+
+@app.post("/api/chat")
 async def chat(request: ChatRequest):
     """
-    Plug-and-play chat endpoint.
-    Accepts a natural language query and returns structured housing insights.
+    Streaming chat endpoint using SSE.
+    Yields status updates and final data chunks.
     """
     if not request.query.strip():
         raise HTTPException(status_code=400, detail="Query cannot be empty.")
 
     graph = get_graph()
+    session_id = request.session_id or "default"
 
-    try:
-        result = graph.invoke({"query": request.query})
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
+    async def event_generator():
+        try:
+            # 1. Get existing history for this session
+            history = session_store.get_history(session_id)
+            
+            # Initialize with user query and history
+            input_state = {
+                "query": request.query,
+                "history": history
+            }
+            
+            # 2. Stream the graph execution
+            async for event in graph.astream(input_state, stream_mode="updates"):
+                for node_name, node_state in event.items():
+                    status = node_state.get("status", f"Node {node_name} working...")
+                    yield f"data: {json.dumps({'type': 'status', 'message': status})}\n\n"
+                    await asyncio.sleep(0.05)
 
-    return ChatResponse(
-        answer=result.get("answer", "Sorry, I could not generate a response."),
-        intent=result.get("intent_type"),
-        chart_data=result.get("chart_data"),
-        sources=result.get("sources", []),
-        key_metrics=result.get("key_metrics", {}),
-        session_id=request.session_id,
-    )
+            # 3. Final execution to get the state
+            final_result = await graph.ainvoke(input_state)
+            
+            # 4. Update session history with the new pair
+            session_store.add_message(session_id, "user", request.query)
+            session_store.add_message(session_id, "bot", final_result.get("answer", ""))
+
+            # Yield the final 'data' event
+            payload = {
+                "type": "data",
+                "answer": final_result.get("answer", ""),
+                "intent": final_result.get("intent_type"),
+                "chart_data": final_result.get("chart_data"),
+                "sources": final_result.get("sources", []),
+                "key_metrics": final_result.get("key_metrics", {}),
+                "session_id": session_id
+            }
+            yield f"data: {json.dumps(payload)}\n\n"
+            
+        except Exception as e:
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+
+    return StreamingResponse(event_generator(), media_type="text/event-stream")
 
 
 @app.get("/api/meta/counties")

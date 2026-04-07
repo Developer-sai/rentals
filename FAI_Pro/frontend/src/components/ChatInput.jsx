@@ -1,4 +1,5 @@
-import { useRef, useCallback } from 'react'
+import { useRef, useCallback, useEffect } from 'react'
+import { SendHorizontal, Paperclip } from 'lucide-react'
 
 export default function ChatInput({ onSend, disabled }) {
   const textareaRef = useRef(null)
@@ -17,33 +18,42 @@ export default function ChatInput({ onSend, disabled }) {
     if (!val) return
     onSend(val)
     el.value = ''
-    el.style.height = 'auto'
+    el.style.height = '60px' // Reset to default
   }, [onSend, disabled])
 
   const onKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      submit()
+      if (textareaRef.current?.value.trim()) {
+        e.preventDefault()
+        submit()
+      }
     }
   }
 
   return (
     <div className="input-wrap">
+       <button className="btn-icon" style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Paperclip size={20} />
+      </button>
+      
       <textarea
         ref={textareaRef}
         className="chat-textarea"
-        placeholder="Ask property queries..."
+        placeholder="Ask IrishHome.AI about rents, prices, or affordability..."
         rows={1}
         disabled={disabled}
         onInput={autoResize}
         onKeyDown={onKeyDown}
+        style={{ minHeight: '24px', paddingTop: '8px', paddingBottom: '8px' }}
       />
+      
       <button
         className="send-btn"
         onClick={submit}
-        disabled={disabled || !textareaRef.current?.value.trim()}
+        disabled={disabled}
+        style={{ opacity: disabled ? 0.5 : 1 }}
       >
-        ↑
+        <SendHorizontal size={18} />
       </button>
     </div>
   )
