@@ -104,31 +104,76 @@ The system is designed with a **Plugin-Ready Data Abstraction Layer**. The agent
 
 ## VI. Installation & Setup
 
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
+
 ### 1. Environment Configuration
-Create a `.env` file in the root directory:
-```bash
+Create a `.env` file in `FAI_Pro/`:
+```ini
 GROQ_API_KEY=gsk_your_key_here
+GROQ_MODEL=openai/gpt-oss-20b
+DATA_DIR=c:\path\to\FAI_Pro\data
+HOST=0.0.0.0
+PORT=8000
+TAVILY_API_KEY=tvly-your_key_here
 ```
 
-### 2. Dependencies
+### 2. Install Dependencies
 ```bash
 # Backend
+cd FAI_Pro
 pip install -r requirements.txt
 
-# Frontend (for development)
-cd frontend && npm install
+# Frontend
+cd frontend
+npm install
 ```
 
-### 3. Execution
-**Production (Unified Server):**
-```bash
-# Build the UI
-cd frontend && npm run build
-cd ../backend
+### 3. Run (Development — Recommended)
 
-# Start the application
+**Terminal 1 — Backend:**
+```bash
+cd FAI_Pro/backend
 python main.py
-# Open: http://localhost:8000
+# API available at http://localhost:8000
+# Health check: http://localhost:8000/health
+```
+
+**Terminal 2 — Frontend:**
+```bash
+cd FAI_Pro/frontend
+npm run dev
+# UI available at http://localhost:3000
+```
+
+> The Vite dev server proxies all `/api` and `/health` requests to the backend on port 8000. No CORS configuration needed.
+
+### 4. Run (Production — Unified Server)
+```bash
+# Build the frontend first
+cd FAI_Pro/frontend
+npm run build
+
+# Then start the backend (serves the built UI on /)
+cd ../backend
+python main.py
+# Full app at http://localhost:8000
+```
+
+### 5. Verify Everything Works
+```bash
+# Health check
+curl http://localhost:8000/health
+# → {"status":"ok","service":"Irish Housing Assistant"}
+
+# Counties API
+curl http://localhost:8000/api/meta/counties
+
+# Chat API
+curl -X POST http://localhost:8000/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"query": "Average rent in Dublin?"}'
 ```
 
 ---

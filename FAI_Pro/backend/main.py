@@ -11,6 +11,8 @@ load_dotenv(dotenv_path)
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
 
+from logger import log_start, log_ok, log_err, log_sep, log_info, log_warn
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -19,6 +21,13 @@ from pydantic import BaseModel
 from typing import Optional
 
 from graph import get_graph
+
+log_sep()
+log_info("SERVER", "IrishHome.AI backend initializing...")
+log_info("SERVER", f"Model: {os.getenv('GROQ_MODEL', 'llama-3.3-70b-versatile')}")
+log_info("SERVER", f"Data dir: {os.getenv('DATA_DIR', './data')}")
+log_info("SERVER", f"Tavily key set: {bool(os.getenv('TAVILY_API_KEY'))}")
+log_sep()
 
 app = FastAPI(
     title="Irish Housing AI Assistant",
@@ -89,28 +98,33 @@ async def chat(request: ChatRequest):
 
     async def event_generator():
         try:
+            import time as _time
+            req_start = _time.time()
+            log_sep()
+            log_start("REQUEST", f"session={session_id} | query='{request.query[:80]}{'...' if len(request.query) > 80 else ''}'")
+
             # 1. Get existing history for this session
             history = session_store.get_history(session_id)
-            
-            # Initialize with user query and history
+            log_info("REQUEST", f"Session history: {len(history)} message(s)")
+
             input_state = {
                 "query": request.query,
                 "history": history
             }
-            
-            # 2. Stream the graph execution
-            async for event in graph.astream(input_state, stream_mode="updates"):
-                for node_name, node_state in event.items():
-                    status = node_state.get("status", f"Node {node_name} working...")
-                    yield f"data: {json.dumps({'type': 'status', 'message': status})}\n\n"
-                    await asyncio.sleep(0.05)
 
-            # 3. Final execution to get the state
-            final_result = await graph.ainvoke(input_state)
-            
-            # 4. Update session history with the new pair
+            # 2. Stream graph execution, accumulating final state
+            final_result = {}
+            async for state in graph.astream(input_state, stream_mode="values"):
+                status = state.get("status", "Processing...")
+                yield f"data: {json.dumps({'type': 'status', 'message': status})}\n\n"
+                await asyncio.sleep(0.05)
+                final_result = state
+
+            # 3. Update session history with the new pair
             session_store.add_message(session_id, "user", request.query)
             session_store.add_message(session_id, "bot", final_result.get("answer", ""))
+            log_ok("REQUEST", f"Pipeline complete in {_time.time()-req_start:.2f}s | intent={final_result.get('intent_type')} | answer_len={len(final_result.get('answer',''))} chars")
+            log_sep()
 
             # Yield the final 'data' event
             payload = {
@@ -125,6 +139,8 @@ async def chat(request: ChatRequest):
             yield f"data: {json.dumps(payload)}\n\n"
             
         except Exception as e:
+            log_err("REQUEST", f"Pipeline failed: {e}")
+            log_sep()
             yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")

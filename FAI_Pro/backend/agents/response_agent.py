@@ -3,9 +3,41 @@ Response Agent
 Compiles the final user-facing response from reasoning output.
 Adds structured metadata for the frontend to optionally display charts.
 """
+import sys
+import os
+from urllib.parse import urlparse
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from logger import log_step, log_ok, log_warn
 
 
-import random
+def _clean_source_name(source: dict) -> str:
+    """Extract a clean display name from a source dict using its URL."""
+    url = source.get("url", "")
+    if url:
+        try:
+            host = urlparse(url).netloc.lower()
+            host = host.replace("www.", "")
+            # Map known Irish property portals to canonical names
+            _known = {
+                "daft.ie": "Daft.ie",
+                "myhome.ie": "MyHome.ie",
+                "rent.ie": "Rent.ie",
+                "property.ie": "Property.ie",
+                "sherry fitzgerald": "Sherry FitzGerald",
+                "greystar.com": "Greystar",
+                "rtb.ie": "RTB",
+                "cso.ie": "CSO",
+                "gov.ie": "Gov.ie",
+            }
+            for key, label in _known.items():
+                if key in host:
+                    return label
+            # Capitalize the domain without TLD as fallback
+            return host.split(".")[0].capitalize()
+        except Exception:
+            pass
+    title = source.get("title", "")
+    return title[:30].split("–")[0].split("|")[0].strip().capitalize() or "Web Source"
 
 def format_response(state: dict) -> dict:
     """Package the reasoning into a final response object with context-aware visualizations."""
@@ -13,6 +45,7 @@ def format_response(state: dict) -> dict:
     reasoning = state.get("reasoning", "I couldn't find relevant data for your query.")
     data = state.get("data", {})
     analysis = state.get("analysis", {})
+    log_step("RESPONSE", f"intent={intent_type} | reasoning_len={len(reasoning)} | analysis_keys={list(analysis.keys())}")
 
     chart_data = None
     
@@ -86,34 +119,46 @@ def format_response(state: dict) -> dict:
         "affordability_index": "Affordability Score",
         "market_status": "Market Status",
         "difference_euro": "Rent Gap",
-        "savings_potential": "Monthly Savings"
+        "savings_potential": "Monthly Savings",
+        "rent_to_income_pct": "Rent-to-Income %",
+        "monthly_income": "Monthly Income",
+        "monthly_disposable": "Monthly Disposable",
+        "affordability_verdict": "Verdict",
+        "annual_rent_cost": "Annual Rent Cost",
     }
 
     for k, v in analysis.items():
-        if v is not None and v != "":
+        if v is not None and v != "" and k != "summary":
             label = metric_map.get(k, k.replace("_", " ").title())
             cleaned_metrics[label] = v
 
     # OPTIMIZATION: Only show charts for high-value analytical intents
-    # If it's a general property lookup, focus on text + sources.
     analytical_intents = ("trend_analysis", "comparison", "affordability")
     if intent_type not in analytical_intents:
         chart_data = None
+    if chart_data:
+        log_step("RESPONSE", f"Chart generated: type={chart_data['type']} | labels={chart_data.get('labels',[])}")
+    else:
+        log_step("RESPONSE", "No chart (not an analytical intent)")
 
-    # Strict Metric Control: Only show metrics for 'affordability' intent.
-    # The user wants them removed for general rent lookups.
+    # Show key metrics for affordability intent only
     if intent_type != "affordability":
         cleaned_metrics = {}
 
-    # Pro-Grade Presentation: Format sources into methodology section if present
+    # Sources: build clean deduplicated list of source names from URLs
     sources = state.get("sources", [])
+    footer = ""
     if sources and reasoning:
-        footer = "\n\n***\n**Sources & Methodology**: Analysis based on real-time market data from "
-        source_names = [s.get('title', 'Property Portals').split('.')[0].capitalize() for s in sources[:3]]
-        footer += ", ".join(set(source_names)) + " and historical RTB datasets."
-        # No duplicate disclaimers in main body. Pro-level directness.
-    else:
-        footer = ""
+        unique_names = list(dict.fromkeys(
+            _clean_source_name(s) for s in sources if s.get("url") or s.get("title")
+        ))[:4]
+        if unique_names:
+            footer = (
+                "\n\n---\n**Sources**: "
+                + " · ".join(unique_names)
+                + " · RTB Historical Datasets"
+            )
+    log_ok("RESPONSE", f"Final answer: {len(reasoning + footer)} chars | metrics={len(cleaned_metrics)} | sources={len(sources)}")
 
     return {
         "answer": reasoning + footer,

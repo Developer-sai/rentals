@@ -3,10 +3,14 @@ data_manager.py
 Lazily loads and normalizes CSV datasets for the Irish Housing Assistant.
 """
 import os
+import sys
+import time
 import pandas as pd
 import numpy as np
 from functools import lru_cache
 from pathlib import Path
+sys.path.insert(0, os.path.dirname(__file__))
+from logger import log_step, log_ok, log_warn
 
 DATA_DIR = Path(os.getenv("DATA_DIR", "./data"))
 
@@ -15,11 +19,14 @@ DATA_DIR = Path(os.getenv("DATA_DIR", "./data"))
 def load_rent_data() -> pd.DataFrame:
     """Load and normalize the full Irish rent dataset (RTB data)."""
     path = DATA_DIR / "irish_rent_full.csv"
+    log_step("DATA", f"Loading CSV → {path.name}")
+    t = time.time()
     df = pd.read_csv(path)
     df["county"] = df["county"].str.strip().str.title()
     df["area"] = df["area"].str.strip().str.title()
     df["rent_euro"] = pd.to_numeric(df["rent_euro"], errors="coerce")
     df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    log_ok("DATA", f"Loaded {path.name}: {len(df):,} rows in {time.time()-t:.3f}s")
     return df
 
 
@@ -27,12 +34,15 @@ def load_rent_data() -> pd.DataFrame:
 def load_house_price_data() -> pd.DataFrame:
     """Load and normalize Dublin house prices dataset."""
     path = DATA_DIR / "dublin_house_prices_cleaned.csv"
+    log_step("DATA", f"Loading CSV → {path.name}")
+    t = time.time()
     df = pd.read_csv(path)
     df.columns = [c.strip() for c in df.columns]
     df["Price"] = pd.to_numeric(df["Price"], errors="coerce")
     df["County"] = df["County"].str.strip().str.title()
     df["Date of Sale"] = pd.to_datetime(df["Date of Sale"], dayfirst=True, errors="coerce")
     df["Year"] = df["Date of Sale"].dt.year
+    log_ok("DATA", f"Loaded {path.name}: {len(df):,} rows in {time.time()-t:.3f}s")
     return df
 
 
@@ -40,12 +50,15 @@ def load_house_price_data() -> pd.DataFrame:
 def load_master_data() -> pd.DataFrame:
     """Load and normalize Master Dataset (macro county-level data)."""
     path = DATA_DIR / "Master_Dataset.csv"
+    log_step("DATA", f"Loading CSV → {path.name}")
+    t = time.time()
     df = pd.read_csv(path)
     df.columns = [c.strip() for c in df.columns]
     df["County"] = df["County"].str.strip().str.title()
     df["Mean Sale Price"] = pd.to_numeric(df["Mean Sale Price"], errors="coerce")
     df["Median Annual Earnings"] = pd.to_numeric(df["Median Annual Earnings"], errors="coerce")
     df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
+    log_ok("DATA", f"Loaded {path.name}: {len(df):,} rows in {time.time()-t:.3f}s")
     return df
 
 

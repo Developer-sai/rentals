@@ -26,15 +26,7 @@ from agents.web_search_agent import web_search_node_handler
 from agents.analysis_agent import analyse
 from agents.reasoning_agent import reason
 from agents.response_agent import format_response
-
-# ──────────────────────────────────────────────
-# Logging Utility
-# ──────────────────────────────────────────────
-def log_agent(agent_name: str, message: str, color: str = "\033[94m"):
-    """Print a timed, colored log message to the console."""
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-    reset = "\033[0m"
-    print(f"[{timestamp}] {color}[{agent_name}]{reset} {message}")
+from logger import log_start, log_step, log_ok, log_err, log_warn, log_sep, log_info, CYAN, GREEN, RED, YELLOW, RESET, BOLD
 
 # ──────────────────────────────────────────────
 class HousingState(TypedDict, total=False):
@@ -46,6 +38,7 @@ class HousingState(TypedDict, total=False):
     county2: Optional[str]
     year: Optional[int]
     bedrooms: Optional[str]
+    salary: Optional[int]  # Annual salary in EUR if mentioned
     data: dict
     retrieval_source: list
     web_results: dict
@@ -64,11 +57,12 @@ class HousingState(TypedDict, total=False):
 def intent_node(state: HousingState) -> HousingState:
     """Classify the user query and extract entities."""
     start = time.time()
-    log_agent("INTENT", f"Analyzing query: '{state['query']}'", "\033[96m")
+    log_sep()
+    log_start("PIPELINE", f"{BOLD}[STEP 1/5] INTENT AGENT starting{RESET}")
+    log_step("INTENT", f"Query: '{state['query'][:100]}'")
     state["status"] = "Analyzing query..."
-    
+
     try:
-        # Pass history for context
         intent = classify_intent(state["query"], state.get("history", []))
         state["intent"] = intent
         state["intent_type"] = intent.get("intent", "general_chat")
@@ -76,20 +70,23 @@ def intent_node(state: HousingState) -> HousingState:
         state["county2"] = intent.get("county2")
         state["year"] = intent.get("year")
         state["bedrooms"] = intent.get("bedrooms")
-        log_agent("INTENT", f"Classified as '{state['intent_type']}' in {time.time()-start:.2f}s", "\033[92m")
+        state["salary"] = intent.get("salary")
+        log_ok("INTENT", f"Done in {time.time()-start:.2f}s → intent={state['intent_type']} | county1={state['county1']} | salary={state['salary']}")
     except Exception as e:
         state["intent_type"] = "general_chat"
         state["error"] = str(e)
-        log_agent("INTENT", f"Error: {e}", "\033[91m")
+        log_err("INTENT", f"Failed: {e}")
     return state
 
 
 def retrieval_node(state: HousingState) -> HousingState:
     """Retrieve data based on classified intent."""
     start = time.time()
-    log_agent("RETRIEVAL", f"Searching databases for {state.get('intent_type')}...", "\033[96m")
+    log_sep()
+    log_start("PIPELINE", f"{BOLD}[STEP 2/5] RETRIEVAL AGENT starting{RESET}")
+    log_step("RETRIEVAL", f"intent={state.get('intent_type')} | county={state.get('county1')} | year={state.get('year')} | bedrooms={state.get('bedrooms')}")
     state["status"] = "Consulting housing databases..."
-    
+
     try:
         result = retrieve_data(
             intent={
@@ -103,81 +100,92 @@ def retrieval_node(state: HousingState) -> HousingState:
         )
         state["data"] = result.get("data", {})
         state["retrieval_source"] = result.get("retrieval_source", [])
-        log_agent("RETRIEVAL", f"Fetched {len(state['data'])} data points in {time.time()-start:.2f}s", "\033[92m")
+        sources = state.get('retrieval_source', [])
+        log_ok("RETRIEVAL", f"Done in {time.time()-start:.2f}s → {len(state['data'])} field(s) retrieved | sources={sources}")
     except Exception as e:
         state["data"] = {}
         state["error"] = str(e)
-        log_agent("RETRIEVAL", f"Error: {e}", "\033[91m")
+        log_err("RETRIEVAL", f"Failed: {e}")
     return state
 
 
 def web_search_node(state: HousingState) -> HousingState:
     """Wrapper for web search handler with logging."""
     start = time.time()
-    log_agent("WEB_SEARCH", "Checking real-time web sources...", "\033[96m")
+    log_sep()
+    log_start("PIPELINE", f"{BOLD}[STEP 3/5] WEB SEARCH AGENT starting{RESET}")
     state["status"] = "Searching real-time web listings..."
-    
+
     result = web_search_node_handler(state)
-    
-    if state.get("web_results") and "results" in state["web_results"]:
-        log_agent("WEB_SEARCH", f"Found {len(state['web_results']['results'])} live results in {time.time()-start:.2f}s", "\033[92m")
+
+    web = state.get("web_results", {})
+    if web and "results" in web:
+        log_ok("WEB_SEARCH", f"Done in {time.time()-start:.2f}s → {len(web['results'])} live result(s) from Tavily")
     else:
-        log_agent("WEB_SEARCH", "Skipped or no results found.", "\033[93m")
+        log_warn("WEB_SEARCH", f"Done in {time.time()-start:.2f}s → skipped (no real-time search needed)")
     return result
 
 
 def analysis_node(state: HousingState) -> HousingState:
     """Run analysis on the retrieved data."""
     start = time.time()
-    log_agent("ANALYSIS", "Running statistical computations...", "\033[96m")
+    log_sep()
+    log_start("PIPELINE", f"{BOLD}[STEP 4/5] ANALYSIS AGENT starting{RESET}")
+    log_step("ANALYSIS", f"intent={state.get('intent_type')} | salary={state.get('salary')} | data_keys={list(state.get('data', {}).keys())[:6]}")
     state["status"] = "Calculating market metrics..."
-    
+
     try:
         enriched = analyse(dict(state))
         state["analysis"] = enriched.get("analysis", {})
-        log_agent("ANALYSIS", f"Completed computations in {time.time()-start:.2f}s", "\033[92m")
+        log_ok("ANALYSIS", f"Done in {time.time()-start:.2f}s → {len(state['analysis'])} metric(s) computed: {list(state['analysis'].keys())}")
     except Exception as e:
         state["analysis"] = {}
         state["error"] = str(e)
-        log_agent("ANALYSIS", f"Error: {e}", "\033[91m")
+        log_err("ANALYSIS", f"Failed: {e}")
     return state
 
 
 def reasoning_node(state: HousingState) -> HousingState:
     """Use Groq LLM to reason and generate explanation."""
     start = time.time()
-    log_agent("REASONING", "Synthesizing insights with LLM...", "\033[96m")
+    log_sep()
+    log_start("PIPELINE", f"{BOLD}[STEP 5a/5] REASONING AGENT (LLM) starting{RESET}")
+    log_step("REASONING", f"Calling Groq LLM to synthesize answer...")
     state["status"] = "Synthesizing market advice..."
-    
+
     try:
-        # Pass history for context
         enriched = reason(dict(state))
         state["reasoning"] = enriched.get("reasoning", "")
-        log_agent("REASONING", f"Generated explanation in {time.time()-start:.2f}s", "\033[92m")
+        log_ok("REASONING", f"Done in {time.time()-start:.2f}s → {len(state['reasoning'])} chars generated")
     except Exception as e:
         state["reasoning"] = "I encountered an error generating the response."
         state["error"] = str(e)
-        log_agent("REASONING", f"Error: {e}", "\033[91m")
+        log_err("REASONING", f"Failed: {e}")
     return state
 
 
 def response_node(state: HousingState) -> HousingState:
     """Package the final response."""
     start = time.time()
-    log_agent("RESPONSE", "Formatting final output...", "\033[96m")
+    log_sep()
+    log_start("PIPELINE", f"{BOLD}[STEP 5b/5] RESPONSE AGENT starting{RESET}")
+    log_step("RESPONSE", "Packaging answer, chart data, sources, metrics...")
     state["status"] = "Preparing final response..."
-    
+
     try:
         final = format_response(dict(state))
         state["answer"] = final.get("answer", "")
         state["chart_data"] = final.get("chart_data")
         state["sources"] = final.get("sources", [])
         state["key_metrics"] = final.get("key_metrics", {})
-        log_agent("RESPONSE", f"Ready in {time.time()-start:.2f}s", "\033[92m")
+        log_ok("RESPONSE", f"Done in {time.time()-start:.2f}s → chart={state['chart_data'] is not None} | sources={len(state['sources'])} | metrics={len(state['key_metrics'])}")
+        log_sep()
+        log_ok("PIPELINE", f"{GREEN}{BOLD}ALL 5 STEPS COMPLETE ✓  answer={len(state['answer'])} chars{RESET}")
+        log_sep()
     except Exception as e:
         state["answer"] = state.get("reasoning", "An error occurred.")
         state["error"] = str(e)
-        log_agent("RESPONSE", f"Error: {e}", "\033[91m")
+        log_err("RESPONSE", f"Failed: {e}")
     return state
 
 
@@ -187,19 +195,19 @@ def response_node(state: HousingState) -> HousingState:
 def build_graph():
     builder = StateGraph(HousingState)
 
-    builder.add_node("intent", intent_node)
+    builder.add_node("intent_cls", intent_node)
     builder.add_node("retrieval", retrieval_node)
     builder.add_node("web_search", web_search_node)
-    builder.add_node("analysis", analysis_node)
-    builder.add_node("reasoning", reasoning_node)
+    builder.add_node("analysis_proc", analysis_node)
+    builder.add_node("reasoning_proc", reasoning_node)
     builder.add_node("response", response_node)
 
-    builder.set_entry_point("intent")
-    builder.add_edge("intent", "retrieval")
+    builder.set_entry_point("intent_cls")
+    builder.add_edge("intent_cls", "retrieval")
     builder.add_edge("retrieval", "web_search")
-    builder.add_edge("web_search", "analysis")
-    builder.add_edge("analysis", "reasoning")
-    builder.add_edge("reasoning", "response")
+    builder.add_edge("web_search", "analysis_proc")
+    builder.add_edge("analysis_proc", "reasoning_proc")
+    builder.add_edge("reasoning_proc", "response")
     builder.add_edge("response", END)
 
     return builder.compile()
